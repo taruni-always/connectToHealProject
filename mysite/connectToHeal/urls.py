@@ -12,8 +12,9 @@ urlpatterns = [
     path('about/', views.aboutpage, name = "about"),
     path('blogs/', views.viewBlogs, name = "blogs"),
     path("registerUser/", views.registerUserPage, name="registerUser"),
-    #path("registerTherapist/", views.registerTherapistPage, name = " registerTherapist"),
-    path("login/", views.loginPage, name="login"),
+    path("registerTherapist/", views.registerTherapistPage, name = " registerTherapist"),
+    path("loginPage/", views.loginPage, name="loginPage"),
+    path("logout/", views.logoutUser, name = "logout"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

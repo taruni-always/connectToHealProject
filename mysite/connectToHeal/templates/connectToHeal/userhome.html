@@ -340,7 +340,6 @@
 
     </style>
 
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -350,7 +349,6 @@
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     
     <!-- Style -->
@@ -359,7 +357,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Connect To Heal</a>
+    <a class="navbar-brand" >Connect To Heal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -393,6 +391,7 @@
         
       </ul>
     </div>
+    <span ><a class="nav-link" href = "{% url 'logout' %}" style = "color:black">Logout </a></span>
   </nav>
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
@@ -425,16 +424,13 @@
                 <br>
                 <br>
                 <br>
-                <br><center><h1 style= "color:black;font-weight: bold;font-size: 100px;"> Hey, Username! </h1></center>
+                <br><h1 style= "color:black;font-weight: bold;font-size: 100px;"><span>Hey, {{request.user}} <span></h1>
             </div>
             <br>
-            <br>
-            
+            <br>            
         </div> 
     </section>
-        </div>
-
-        
+        </div>        
         <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
         </div>
