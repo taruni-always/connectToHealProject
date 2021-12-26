@@ -1,0 +1,54 @@
+<head>
+    <title>Connect To Heal</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css" crossorigin="anonymous">
+    </head>
+    <body >  
+        <div class="hero" style="background-image: url('/media/home.jfif');background-size:cover;"> 
+    <div>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" >Connect To Heal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/home">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/blogs">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/discussion">Venting Space <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About <span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+            
+          </nav>
+        </div>
+    <div  class="container-fluid" style= "padding:10px">
+    {% for therapist in therapists %}
+        <div class="row">
+            <div class = "card">
+                <center><img class="col-7" src="{{ therapist.cover.url }}"/></center>
+                <div class="col-7  align-self-center">
+                    <center>
+                        <p name="therapistname">Name:  {{therapist.username}}<br> Email:  {{therapist.email}}<br> Work Experience: {{therapist.workExperience}} <br> About me: {{therapist.aboutMe}} <br>Price Per Session: {{therapist.pricePerSession}} </p>
+                        <button class = "btn btn-outline-primary" >Book Appointment</a>
+                    </center>
+                </div>
+            </div>
+        </div>  
+        <br>
+    {% endfor %}
+    </div>
+    
+</body>
+</html>

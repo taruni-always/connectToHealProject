@@ -9,33 +9,23 @@ class createUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "password1", "password2"]
-
-'''
-class createTherapistForm(UserCreationForm):
-    aboutMe = forms.CharField(max_length = 1024)
-    workExperience = forms.CharField(max_length = 1024)
-    pricePerSession = forms.IntegerField()
-
+class DateInput(forms.DateInput):
+    input_type = 'date'
+    
+class TimeInput(forms.TimeInput):
+    input_type = 'time'
+    
+class SessionForm(forms.ModelForm):
     class Meta:
-        model = Therapist
-        fields = ["username", "email", "password1", "password2", "aboutMe", "workExperience", "pricePerSession"]
-
-
-class NewUserForm(UserCreationForm):
-	email = forms.EmailField(required=True)
-
-	class Meta:
-		model = User
-		fields = ("username", "email", "password1", "password2")
-
-	def save(self, commit=True):
-		user = super(NewUserForm, self).save(commit=False)
-		user.email = self.cleaned_data['email']
-		if commit:
-			user.save()
-		return user
-'''
-
+        model = Session
+        fields = ["username", "therapistname", "date", "fromtime", "totime", "paymentstatus", "sessionstatus"]
+        widgets = {
+            'date': DateInput(),
+            'totime':TimeInput(),
+            'fromtime':TimeInput()
+        }
+        attrs={'classs': 'form-control'}
+        
 class DiscussionForm(forms.ModelForm):
     class Meta:
         model = DiscussionModel
